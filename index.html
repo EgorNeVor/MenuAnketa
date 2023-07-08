@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="but" onclick="onBut(this)"><div id="divvv">Перейти к анкете</div></button>
+    <style>
+        body{
+            background-color: #c7e6f1;
+        }
+        #but:hover{
+          background-color: #6995a8;
+        }
+        #but{
+            height: 100px;
+            width: 400px;
+            background-color: #7ebacf;
+            border: 0px;
+            margin-left: 400px;
+            margin-top: 320px;
+        }
+        #divv:hover{
+            color: #526064;
+        }
+        #divvv{
+            font-size: 19px;
+            letter-spacing: 4px;
+            color: #cbe9f2;
+        }
+    </style>
+    <script>
+        function onBut(el){
+            but = document.getElementById('but');
+            window.location.href="menu.html"
+        }
+    </script>
+</body>
+</html>

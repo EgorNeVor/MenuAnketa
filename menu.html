@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="rus">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div1">
+        <h1 id="h1">Меню</h1>
+        <h2 id="h2">Анкета</h2><br>
+        <form id="form">
+        Сколько вам лет? <input type="number" placeholder="Возраст" id="year" class="inputt"><br>
+        Ваше Имя? <input type="text" placeholder="Имя" maxlength="15" class="inputt" id="name"><br>
+        Ваш пол? <select name="gend" id="gen">
+            <option disabled="Не указан" selected id="nogen">Не указан</option>
+            <option value="Мужской">Мужской</option>
+            <option value="Женский">Женский</option>
+        </select>
+        <input type="reset" value="Сбросить" id="resett">
+        </form>
+        <button id="gotovo" onclick="clickga(this)">Готово</button>
+    </div>
+    <div id="div12" name="div123">
+    <h1 id="div22" class="div4"></h1><br>
+    <div id="div23" class="div4"></div><br>
+    <div id="div24" class="div4"></div><br>
+    <div id="div25" class="div4"></div>
+    </div>
+    <style>
+        #div12{
+            margin-top: 110px;
+            text-align: center;
+        }
+        #nogen{
+            color: rgb(160, 141, 141);
+        }
+        #resett{
+            margin-left: 10px;
+            margin-top: 30px;
+        }
+        #gotovo{
+            margin-left: 30px;
+            margin-top: 50px;
+        }
+        .inputt{
+            margin-bottom: 70px;
+        }
+        #form {
+            margin-left: 20px;
+        }
+        #h1{
+            color: white;
+            text-align: center;
+        }
+        #h2{
+            margin-top: 10px;
+            text-align: center;
+
+        }
+        body {
+            height: 1100px;
+            background-color: #ebf3e3;
+        }
+        #div {
+            color: red;
+        }
+        #div1 {
+            border: solid black 1.5px;
+            background-color: #dbe6cf;
+            width: 40%;
+            height: 700px;
+            margin-left: 30%;
+
+        }
+    </style>
+    <script>
+       function clickga(el){
+            var name = document.getElementById('name').value;
+            var year = document.getElementById('year').value;
+            var Select = document.getElementById('gen');
+            valueSelect = Select.value;
+            if(name == "" || year == "" || valueSelect == ""){
+                alert("Заполните все поля!")
+            }
+            else if(name.length < 2 || name.length > 15) {
+                alert("Введите корректное имя!");
+            } 
+            else if(year > 150){
+                alert("Введите корректый возраст");
+            } else {
+            alert("Спасибо за учистие в анкете");
+            var div22 = document.getElementById('div22');
+            div22.innerHTML = 'Информация о вас:';
+            var div23 = document.getElementById('div23');
+            div23.innerHTML = 'Ваш имя: '+name;
+            var div24 = document.getElementById('div24');
+            div24.innerHTML = 'Ваш возраст: ' +year;
+            var div25 = document.getElementById('div25');
+            div25.innerHTML = 'Ваш пол: '+valueSelect;
+            var div12 = document.getElementById('div12');
+            }
+       }
+    </script>
+</body>
+</html>
